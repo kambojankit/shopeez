@@ -14,7 +14,7 @@ public interface CustomerDBAPI {
 	 * @param name
 	 * @param address
 	 * @param phone
-	 * @param email
+	 * @param emailc
 	 * @return true : Creation success, false : Creation failure
 	 */
 	boolean createCustomer(String customer_id, String name, String address, String phone,String email,DBObject location);
@@ -40,7 +40,7 @@ public interface CustomerDBAPI {
 	 * @param list
 	 * @return true : Creation success, false : Creation failure
 	 */
-	boolean createOrderList(BasicDBObject list);
+	Integer createOrderList(BasicDBObject list, String custID);
 	
 	/**
 	 * This function us used to add vendors to trusted list

@@ -2,14 +2,14 @@ package com.shopeezz.rest.dao.impl;
 
 import com.mongodb.DBObject;
 import com.shopeezz.rest.dao.OrderDBAPI;
+import com.shopeezz.rest.model.Order;
 
 public class OrderDAO implements OrderDBAPI {
 
 	@Override
-	public String placeOrder(long orderListID, String customer_id,
-			String vendor_id) {
+	public String placeOrder(Order order) {
 		
-		return null;
+		return "12345";
 	}
 
 	@Override
@@ -19,16 +19,15 @@ public class OrderDAO implements OrderDBAPI {
 	}
 
 	@Override
-	public boolean updateOrder(String orderID, String field, String value,
-			String action) {
+	public boolean updateOrder(String orderID) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
-	public boolean cancelOrder(String orderID, String message) {
+	public boolean cancelOrder(String orderID) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }

@@ -6,6 +6,7 @@ public class Item {
 	String itemQuantity;
 	String itemPrice;
 	String itemQuantityType;
+	
 	public String getItemName() {
 		return itemName;
 	}

@@ -1,23 +1,32 @@
 package com.shopeezz.rest.services.impl;
 
+import com.shopeezz.rest.dao.OrderDBAPI;
+import com.shopeezz.rest.dao.impl.OrderDAO;
 import com.shopeezz.rest.model.CustPurchaseItemList;
+import com.shopeezz.rest.model.Customer;
+import com.shopeezz.rest.model.Order;
 import com.shopeezz.rest.model.Vendor;
-import com.shopeezz.rest.services.Customer;
-import com.shopeezz.rest.services.Order;
+import com.shopeezz.rest.services.OrderBase;
 
-public class OrderService implements Order {
-
+public class OrderService implements OrderBase {
+	OrderDBAPI orderDao;
+	
+	public OrderService(){
+		orderDao = new OrderDAO();
+	}
 	@Override
-	public Order createOrder(CustPurchaseItemList purchaseItemList,
-			Customer customer, Vendor vendor) {
+	public String createOrder(Order order) {
 		// TODO Auto-generated method stub
-		return null;
+		return orderDao.placeOrder(order);
 	}
 
+	public boolean updateOrder(String orderId){
+		return orderDao.updateOrder(orderId);
+	}
+	
 	@Override
-	public boolean cancelOrder(Order order) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean cancelOrder(String orderId) {
+		return orderDao.cancelOrder(orderId);
 	}
 
 }

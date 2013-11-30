@@ -4,7 +4,8 @@ import java.util.List;
 
 public class Order {
 	String orderId;
-    List<CustPurchaseItemList> custPurchaseItemList;  
+	
+    CustPurchaseItemList custPurchaseItemList;  
     Vendor productVendor;
     private int deliveryTime;
     
@@ -15,11 +16,11 @@ public class Order {
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
-	public List<CustPurchaseItemList> getCustPurchaseItemList() {
+	public CustPurchaseItemList getCustPurchaseItemList() {
 		return custPurchaseItemList;
 	}
 	public void setCustPurchaseItemList(
-			List<CustPurchaseItemList> custPurchaseItemList) {
+			CustPurchaseItemList custPurchaseItemList) {
 		this.custPurchaseItemList = custPurchaseItemList;
 	}
 	public Vendor getProductVendor() {

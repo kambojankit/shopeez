@@ -17,6 +17,9 @@ public class Customer {
 	String custPincode;
 	String custLandmark;
 	
+	private String longi;
+	private String lati;
+	String location;
 	List<Vendor> trustedVendorList;
 	List<CustPurchaseItemList> custPurchaseItemList;
 	
@@ -25,7 +28,25 @@ public class Customer {
 	List<Order> orderHistory;
 	Date startDate;
 	
+	public Customer(){
+		
+	}
 	
+	
+	public Customer(String custName, String custId, String custPhone,
+			 String custHouseNumber, String custHomeFloorNumber,
+			String custStreet, String custCity, String custPincode) {
+		super();
+		this.custName = custName;
+		this.custId = custId;
+		this.custPhone = custPhone;
+	
+		this.custHouseNumber = custHouseNumber;
+		this.custHomeFloorNumber = custHomeFloorNumber;
+		this.custStreet = custStreet;
+		this.custCity = custCity;
+		this.custPincode = custPincode;
+	}
 	public String getCustName() {
 		return custName;
 	}
@@ -116,6 +137,26 @@ public class Customer {
 	}
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
+	}
+
+
+	public String getLongi() {
+		return longi;
+	}
+
+
+	public void setLongi(String longi) {
+		this.longi = longi;
+	}
+
+
+	public String getLati() {
+		return lati;
+	}
+
+
+	public void setLati(String lati) {
+		this.lati = lati;
 	}
 	
 	

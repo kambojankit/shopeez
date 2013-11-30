@@ -3,6 +3,7 @@ package com.shopeezz.rest.dao.impl;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -14,6 +15,9 @@ import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import com.mongodb.WriteConcern;
 import com.shopeezz.rest.dao.VendorDBAPI;
+import com.shopeezz.rest.model.CustPurchaseItemList;
+import com.shopeezz.rest.model.Customer;
+import com.shopeezz.rest.model.Vendor;
 
 public class VendorDAO implements VendorDBAPI {
 	Logger logger = Logger.getLogger("VendorDAO");
@@ -21,7 +25,7 @@ public class VendorDAO implements VendorDBAPI {
 	DB db = null;
 	DBCollection coll = null;
 	public VendorDAO() throws UnknownHostException { 
-		conn = new Mongo("localhost", 27017);
+		conn = new Mongo("54.254.192.194", 27017);
 		db = conn.getDB("shopeezz");
 		db.setWriteConcern(WriteConcern.JOURNALED);
 		coll = db.getCollection("vendor_info");
@@ -138,7 +142,8 @@ public class VendorDAO implements VendorDBAPI {
 	}
 
 	@Override
-	public ArrayList<DBObject> getVendorList(Object location) {
+	public List<Vendor> getVendorList(CustPurchaseItemList itemList,
+			Customer customer) {
 		// TODO Auto-generated method stub
 		return null;
 	}

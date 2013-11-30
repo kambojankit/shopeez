@@ -21,7 +21,7 @@ public class CustomerDAO implements CustomerDBAPI{
 	DBCollection coll = null;
 	public CustomerDAO() throws UnknownHostException {
 		
-		conn = new Mongo("localhost", 27017);
+		conn = new Mongo("54.254.192.194", 27017);
 		db = conn.getDB("shopeezz");
 		db.setWriteConcern(WriteConcern.JOURNALED);
 		coll = db.getCollection("customer_info");
@@ -60,9 +60,9 @@ public class CustomerDAO implements CustomerDBAPI{
 	}
 
 	@Override
-	public boolean createOrderList(BasicDBObject list) {
+	public Integer createOrderList(BasicDBObject list, String custID) {
 		// TODO Auto-generated method stub
-		return false;
+		return 1;
 	}
 
 	@Override

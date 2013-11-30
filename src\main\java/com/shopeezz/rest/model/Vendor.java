@@ -26,6 +26,26 @@ public class Vendor {
 	Order CurrentOrder;
 	
 	List<VendorProductCatalog> ownedProductCatalog;
+	
+	
+	
+
+	public Vendor(String vendorName, String vendorId, String vendorPhone,
+			String vendorShopNumber, String vendorShopFloorNumber,
+			String vendorStreet, String vendorCity, String vendorPincode,
+			String latitude, String longitude) {
+		super();
+		this.vendorName = vendorName;
+		this.vendorId = vendorId;
+		this.vendorPhone = vendorPhone;
+		this.vendorShopNumber = vendorShopNumber;
+		this.vendorShopFloorNumber = vendorShopFloorNumber;
+		this.vendorStreet = vendorStreet;
+		this.vendorCity = vendorCity;
+		this.vendorPincode = vendorPincode;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
 
 	public String getVendorName() {
 		return vendorName;

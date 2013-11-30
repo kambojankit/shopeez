@@ -1,6 +1,7 @@
 package com.shopeezz.rest.dao;
 
 import com.mongodb.DBObject;
+import com.shopeezz.rest.model.Order;
 
 public interface OrderDBAPI {
 	
@@ -11,7 +12,7 @@ public interface OrderDBAPI {
 	 * @param vendor_id
 	 * @return OrdertID in the form of String
 	 */
-	String placeOrder(long orderListID, String customer_id,String vendor_id);
+	String placeOrder(Order order);
 	
 	/**
 	 * This function is used to track the order/display the status of the order items
@@ -28,7 +29,7 @@ public interface OrderDBAPI {
 	 * @param action
 	 * @return true : Update Successful, false : Update Failed
 	 */
-	boolean updateOrder(String orderID, String field, String value, String action);
+	boolean updateOrder(String orderID);
 	
 	/**
 	 * This function is used to cancel the order and add a message stating the reason for the cancellation
@@ -36,5 +37,5 @@ public interface OrderDBAPI {
 	 * @param message
 	 * @return true : Cancel success, false: Cancel failed
 	 */
-	boolean cancelOrder(String orderID, String message);
+	boolean cancelOrder(String orderID);
 }

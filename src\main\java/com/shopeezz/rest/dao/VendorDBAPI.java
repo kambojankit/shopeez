@@ -2,8 +2,12 @@ package com.shopeezz.rest.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.mongodb.DBObject;
+import com.shopeezz.rest.model.CustPurchaseItemList;
+import com.shopeezz.rest.model.Customer;
+import com.shopeezz.rest.model.Vendor;
 
 
 
@@ -102,7 +106,8 @@ public interface VendorDBAPI {
 	 * @param location Object containing key value pairs
 	 * @return ArrayList<DBObject> containing vendor_id and name
 	 */
-	ArrayList<DBObject> getVendorList(Object location);
+	List<Vendor> getVendorList(CustPurchaseItemList itemList,
+			Customer customer);
 	
 	/**
 	 * This function will be used to get the list of items a vendor is selling
